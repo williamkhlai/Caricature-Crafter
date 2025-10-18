@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caricature Crafter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: #422800; /* A dark brown for text */
+    }
+
+    .font-display {
+      font-family: 'Luckiest Guy', cursive;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes pop-in {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    
+    @keyframes wobble {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(1.5deg); }
+      75% { transform: rotate(-1.5deg); }
+    }
+
+    .animate-pop-in {
+      animation: pop-in 0.5s ease-out forwards;
+    }
+    
+    .animate-wobble-hover:hover {
+      animation: wobble 0.8s ease-in-out infinite;
+    }
+    
+    .cartoon-shadow {
+        box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    }
+    
+    .cartoon-button-press:active {
+        transform: translate(5px, 5px);
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+    }
+  </style>
+</head>
+  <body class="bg-[#F4A261]">
+    <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-[#E9C46A] via-[#F4A261] to-[#E76F51] -z-10"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
